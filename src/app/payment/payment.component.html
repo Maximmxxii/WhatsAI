@@ -1,0 +1,12 @@
+<!-- src/app/payment/payment.component.html -->
+<div>
+  <h2>Subscribe to our Membership</h2>
+  <form (submit)="handlePayment($event)">
+    <div #cardElement></div>
+    <div *ngIf="cardErrors" class="card-errors">{{ cardErrors }}</div>
+    <button type="submit" [disabled]="isLoading">
+      <span *ngIf="isLoading">Processing...</span>
+      <span *ngIf="!isLoading">Pay</span>
+    </button>
+  </form>
+</div>
